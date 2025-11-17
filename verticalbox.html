@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vertical U Box — Example</title>
+<style>
+  :root{
+    --purple: #c9bfe6;   /* main outside color */
+    --deep-purple: #b89fdc;
+    --card-bg: #ffffff;
+    --text: #222;
+    --accent: #2b2b2b;
+  }
+
+  /* page centering */
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #fafafa;
+    color:var(--text);
+  }
+
+  /* outer stage - constrains the sample */
+  .stage{
+    width:min(820px, 92vw);
+    padding:32px;
+  }
+
+  /* big rounded rectangle that becomes the 'U' by placing a white cutout over its top center */
+  .u-wrap{
+    position:relative;
+    background: linear-gradient(180deg, var(--purple), var(--deep-purple));
+    border-radius:44px;
+    padding: 48px;
+    box-sizing:border-box;
+    /* size */
+    height:420px;
+    overflow:visible;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  }
+
+  /* the white "cutout" that hides top center part of the rounded rectangle,
+     producing a U-shape visually. Adjust width/height to get the notch size. */
+  .u-wrap::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:-24px; /* pull it up a bit so it overlaps top edge */
+    width:62%;
+    height:220px;
+    background:var(--card-bg);
+    border-radius:20px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+    z-index:2;
+  }
+
+  /* small bottom notch (optional) to mimic the little rectangular cut on the bottom center */
+  .u-wrap::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-12px;
+    width:240px;
+    height:36px;
+    background:var(--card-bg);
+    border-radius:8px;
+    z-index:2;
+    box-shadow:0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  /* center column for the cards shown inside the U */
+  .center-column{
+    position:relative;
+    z-index:3; /* above the cutouts */
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:22px;
+    pointer-events: none; /* decorative demo */
+  }
+
+  /* white info card style */
+  .info-card{
+    width:min(68%, 520px);
+    background:var(--card-bg);
+    border-radius:14px;
+    padding:28px 22px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    text-align:center;
+    pointer-events: auto;
+  }
+
+  .muted{
+    font-size:16px;
+    color:#6b6b6b;
+    margin-bottom:8px;
+  }
+
+  .big-number{
+    font-size:44px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    color:var(--accent);
+    margin:0;
+  }
+
+  /* alternate header card used in first screenshot style (largest, angled text feel) */
+  .hero{
+    width:min(82%, 600px);
+    background:var(--purple);
+    color:var(--accent);
+    border-radius:28px;
+    padding:44px 26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    transform:translateY(-6px);
+  }
+
+  .hero h2{
+    margin:0;
+    font-size:32px;
+    font-weight:700;
+    text-align:center;
+    line-height:1.02;
+  }
+
+  /* responsive tweaks */
+  @media (max-width:640px){
+    .u-wrap{ height:380px; padding:28px; border-radius:30px; }
+    .u-wrap::before{ width:78%; height:180px; top:-18px; border-radius:14px; }
+    .u-wrap::after{ width:190px; height:34px; bottom:-10px; border-radius:8px; }
+    .hero{ padding:18px 12px; border-radius:18px; }
+    .hero h2{ font-size:22px; }
+    .big-number{ font-size:34px; }
+    .info-card{ width:86%; padding:18px; border-radius:12px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="stage">
+    <div class="u-wrap">
+      <!-- top hero area (like "Highest & Average CTC") -->
+      <div class="center-column" style="justify-content:flex-start; gap:18px;">
+        <div class="hero" aria-hidden="true">
+          <h2>Highest &amp;<br>Average CTC</h2>
+        </div>
+
+        <!-- first white card (Average) -->
+        <div class="info-card" style="margin-top:8px;">
+          <div class="muted">Average CTC</div>
+          <p class="big-number">₹6.1 LPA</p>
+        </div>
+
+        <!-- second white card (Highest) -->
+        <div class="info-card">
+          <div class="muted">Highest CTC</div>
+          <p class="big-number">₹36 LPA</p>
+        </div>
+
+        <!-- you can place more cards or spacing as needed -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
