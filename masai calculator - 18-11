@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+    <style>
+    body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0; /* Light background for contrast */
+    }
+
+    #calculator-container {
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    #calculator-body {
+        display: flex;
+        gap: 5px; 
+    }
+    #left-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 60px); 
+        grid-template-rows: repeat(4, 60px); 
+        gap: 5px; 
+    }
+    #right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Common button styles */
+    button {
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    /* Style for number buttons (default white/light grey) */
+    .number {
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    /* Style for the 'C' button (red) */
+    .red-btn {
+        background-color: #c93b3b;
+        color: white;
+    }
+
+    /* Style for operator and equals buttons (black/dark) */
+    .black-btn {
+        background-color: #333;
+        color: white;
+    }
+
+    /* Ensure the operator buttons take up all available space in the right column */
+    #right-column .black-btn {
+        flex-grow: 1; /* Makes each button equally tall */
+        width: 60px; /* Set a consistent width */
+    }
+
+    /* Hover effect */
+    button:hover {
+        opacity: 0.9;
+    }
+    </style>
+</head>
+<body>
+    <div id="calculator-container">
+        <h1>Masai Calculator</h1>
+        <div id="calculator-body">
+            <div id="left-grid">
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="red-btn">C</button>
+                <button class="number">0</button>
+                <button class="black-btn">=</button>
+            </div>
+            <div id="right-column">
+                <button class="black-btn">+</button>
+                <button class="black-btn">-</button>
+                <button class="black-btn">x</button>
+                <button class="black-btn">÷</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
