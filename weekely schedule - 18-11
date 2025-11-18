@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly Schedule</title>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #fafafa;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .container {
+        width: 900px;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: cursive;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .schedule {
+        display: grid;
+        grid-template-columns: 120px repeat(5, 1fr);
+        gap: 10px;
+        align-items: center;
+    }
+
+    .time, .day, .slot {
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: 600;
+    }
+
+    .time {
+        background: #b2ebf2;
+    }
+
+    .day {
+        background: #f8c6d8;
+    }
+
+    .slot {
+        height: 35px;
+        background: #f8c6d8;
+    }
+
+    .yellow-slot {
+        background: #e9dd8f;
+    }
+
+    .note {
+        margin-top: 20px;
+        width: 100%;
+        padding: 15px;
+        background: #b2ebf2;
+        border-radius: 20px;
+        text-align: left;
+        font-weight: 600;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Weekly Schedule</h1>
+
+    <div class="schedule">
+
+        <!-- Days Row -->
+        <div></div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+
+        <!-- Time & Slots -->
+        <!-- Repeat each row -->
+        <div class="time">08:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">09:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">10:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">11:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">12:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">13:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">14:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">15:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+        <div class="time">16:00</div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+        <div class="slot yellow-slot"></div>
+        <div class="slot"></div>
+
+    </div>
+
+    <div class="note">Note:</div>
+</div>
+
+</body>
+</html>
