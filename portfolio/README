@@ -1,0 +1,20 @@
+# Personal Portfolio — Suhitha
+
+This repository contains a responsive personal portfolio webpage built using **HTML + CSS only**.
+
+## Files
+- `index.html` — main HTML
+- `style.css` — styles and responsive rules
+- `README.md` — this file
+
+## AI Tool Used
+I have used creao.ai
+## What I did manually (edits & fixes after AI generation)
+List the manual changes you made to the AI-generated template (include in your final submission). Example entries (these edits are included in this repo):
+- Fixed responsive breakpoints and tuned grid layout for tablet and mobile.
+- Replaced placeholder content with real text (name, about statement, skills).
+- Implemented CSS-only hamburger using a hidden checkbox for mobile navigation.
+- Cleaned and simplified the CSS (box-sizing, container width limits, accessible focus outlines).
+- Ensured no horizontal scroll and improved spacing and typography.
+- Added semantic HTML structure and anchor navigation for single-page sections.
+
